@@ -215,6 +215,7 @@ int main()
     cin>>trials;
     percolation exp(a);
     percolationStat value(trials,a);
+    cout<<"Here _ represent a blocked position and O represent a open Site"<<endl;
     for(int i=0;i<trials;i++)
     {
         bool cond=false;
@@ -226,7 +227,7 @@ int main()
         }
         exp.disp();
         cout<<endl;
-        cout<<exp.numberOfOpenSites()<<endl;
+        cout<<"The no of open Sites: "<<exp.numberOfOpenSites()<<endl;
         value.init(exp.numberOfOpenSites());
         exp.reset();
     }
@@ -234,8 +235,7 @@ int main()
     cout<<"Probab is "<<(value.mean())/(a*a)<<endl;
     cout<<"The standard deviation of experiment is "<<value.stdDev()<<endl;
     cout<<"Experiment Finished"<<endl;
-    value.display();
-    cout<<"Press anything to quit"<<endl;
+    cout<<"Press any Character + return to quit"<<endl;
     char n;
     cin>>n;
     return 1;
